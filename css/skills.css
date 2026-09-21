@@ -30,7 +30,7 @@
     color: var(--color-text-secondary);
 }
 
-/* Рядки: зліва назва групи, справа картки */
+/* Line - left on title group, on the rigth cards*/
 .skills-groups {
     border-top: 1px solid var(--color-border);
 }
@@ -63,7 +63,7 @@
     list-style: none;
 }
 
-/* Компактна картка: іконка ліворуч, текст праворуч */
+/* Compact cards: icons left, text rigth*/
 .skill-card {
     display: flex;
     align-items: center;
@@ -97,7 +97,6 @@
     border-color: var(--color-accent);
 }
 
-/* fill — для заповнених іконок, color — для контурних (stroke: currentColor) */
 .skill-icon {
     fill: var(--color-accent);
     color: var(--color-accent);
@@ -123,7 +122,7 @@
     color: var(--color-text-secondary);
 }
 
-/* Плашка "Learning" */
+/* Border --"Learning" */
 .skill-badge {
     flex-shrink: 0;
     padding: 2px 8px;
@@ -134,7 +133,7 @@
     color: var(--color-accent);
 }
 
-/* Soft skills — ті самі рядки, але дрібні теги */
+/* Soft skills */
 .soft-skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -160,7 +159,7 @@
     border-color: var(--color-accent);
 }
 
-/* Блок для замовників */
+/* section contact */
 .skills-cta {
     display: flex;
     align-items: center;

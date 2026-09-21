@@ -1,3 +1,6 @@
+
+/*REDY*/
+
 .hero {
     position: relative;
     display: flex;
@@ -6,10 +9,18 @@
     height: 900px;
     background-image:
         linear-gradient(rgb(74 164 247 / 21%), rgb(16 18 21)),
-        url("../img/1hero-img@1x.jpg"), url("../img/1hero-img@2x.jpg");
+        url("../img/hero-img@1x.jpg"), url("");
     background-size: cover;
     background-position: center;
 
+}
+
+@media (min-resolution: 2dppx) {
+    .hero {
+        background-image:
+            linear-gradient(rgb(74 164 247 / 21%), rgb(16 18 21)),
+            url("../img/hero-img@2x.jpg");
+    }
 }
 
 .hero-container {
