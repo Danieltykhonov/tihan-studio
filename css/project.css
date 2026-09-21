@@ -1,0 +1,378 @@
+/* =====================================================================
+   PROJECTS SECTION
+   Підключи цей файл після styles.css (або встав його вміст в кінець).
+
+   Кольори і шрифти беруться з твого :root (--color-*, --font-heading).
+   Усі значення в блоці ".projects { ... }" нижче — це лише псевдоніми
+   на твої змінні, тож змінюєш палітру в одному місці — :root.
+   ===================================================================== */
+
+.projects,
+.projects *,
+.projects *::before,
+.projects *::after {
+  box-sizing: border-box;
+}
+
+.projects {
+  --pj-accent: var(--color-accent, #2f9bff);
+  --pj-accent-hover: var(--color-accent-hover, #57b0ff);
+  --pj-text: var(--color-text-primary, #ffffff);
+  --pj-muted: var(--color-text-secondary, #b3b6bb);
+  --pj-faint: var(--color-text-muted, #7a7d82);
+  --pj-line: var(--color-border, #2a2c30);
+  --pj-line-strong: color-mix(in srgb, var(--pj-muted) 38%, transparent);
+  --pj-surface: var(--color-bg-secondary, #16181c);
+  --pj-inset: var(--color-bg-primary, #101215);
+  --pj-on-accent: var(--color-bg-header, #0c0d10);
+  --pj-gap: clamp(16px, 2.2vw, 28px);
+  --pj-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  padding-block: clamp(72px, 11vw, 150px);
+  color: var(--pj-text);
+}
+
+.projects__inner {
+  width: min(1200px, 100% - 48px);
+  margin-inline: auto;
+}
+
+/* ---------- Section head ---------- */
+
+.projects__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 48px;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.projects__title {
+  margin: 0;
+  font-family: var(--font-heading, inherit);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+
+  color: var(--color-text-primary);
+}
+
+.projects__lead {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--pj-muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* ---------- Masonry grid ----------
+   Колонки: до 3 штук, кожна не вужча за 300px.
+   Висота карток різна — залежить від пропорцій фото і довжини тексту. */
+
+.projects__grid {
+  columns: 3 300px;
+  column-gap: var(--pj-gap);
+}
+
+/* ---------- Card ---------- */
+
+.pj-card {
+  position: relative;
+  display: block;
+  margin: 0 0 var(--pj-gap);
+  padding: 10px;
+  overflow: hidden;
+  isolation: isolate;
+  break-inside: avoid;
+  border: 1px solid var(--pj-line);
+  border-radius: 24px;
+  background: var(--pj-surface);
+  transition:
+    transform 0.45s var(--pj-ease),
+    border-color 0.3s ease,
+    box-shadow 0.45s ease;
+}
+
+/* м'яке світло, що йде за курсором */
+.pj-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--pj-accent) 16%, transparent),
+    transparent 62%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.pj-card:focus-within {
+  border-color: color-mix(in srgb, var(--pj-accent) 45%, transparent);
+}
+
+@media (hover: hover) {
+  .pj-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--pj-accent) 45%, transparent);
+    box-shadow: 0 30px 60px -32px color-mix(in srgb, var(--pj-accent) 45%, transparent);
+  }
+
+  .pj-card:hover::before {
+    opacity: 1;
+  }
+
+  .pj-card:hover .pj-media img {
+    transform: scale(1.05);
+  }
+}
+
+/* ---------- Media (photo) ---------- */
+
+.pj-media {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--pj-inset);
+}
+
+/* фіксовані пропорції кадру: значення приходить з JS як --ratio */
+.pj-media--ratio {
+  aspect-ratio: var(--ratio);
+}
+
+.pj-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.9s var(--pj-ease);
+}
+
+.pj-media--ratio img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* заглушка, поки фото немає */
+.pj-media--empty {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--pj-line-strong);
+  background:
+    radial-gradient(
+      120% 90% at 20% 0%,
+      color-mix(in srgb, var(--pj-accent) 18%, transparent),
+      transparent 60%
+    ),
+    var(--pj-inset);
+}
+
+.pj-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 24px;
+  color: var(--pj-muted);
+  text-align: center;
+}
+
+.pj-placeholder svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pj-placeholder span {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--pj-text);
+}
+
+.pj-placeholder small {
+  color: var(--pj-faint);
+  font-size: 0.78rem;
+  word-break: break-all;
+}
+
+/* ---------- Body ---------- */
+
+.pj-body {
+  position: relative;
+  z-index: 1;
+  padding: 20px 12px 12px;
+}
+
+.pj-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pj-title {
+  margin: 0;
+  font-family: var(--font-heading, inherit);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.pj-year {
+  flex: none;
+  color: var(--pj-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pj-desc {
+  margin: 10px 0 0;
+  color: var(--pj-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.pj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pj-tags li {
+  padding: 4px 10px;
+  border: 1px solid var(--pj-line);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* ---------- Buttons ---------- */
+
+.pj-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pj-btn {
+  display: inline-flex;
+  flex: 1 1 130px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.pj-btn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  transition: transform 0.3s var(--pj-ease);
+}
+
+.pj-btn--primary {
+  background: var(--pj-accent);
+  color: var(--pj-on-accent);
+}
+
+.pj-btn--primary:hover {
+  background: var(--pj-accent-hover);
+}
+
+.pj-btn--primary:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.pj-btn--ghost {
+  border-color: var(--pj-line-strong);
+  color: var(--pj-text);
+}
+
+.pj-btn--ghost:hover {
+  border-color: var(--pj-accent-hover);
+  color: var(--pj-accent-hover);
+}
+
+.pj-btn--ghost:hover svg {
+  transform: scale(1.12);
+}
+
+.pj-btn:focus-visible {
+  outline: 2px solid var(--pj-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Появa карток при скролі ----------
+   Клас .is-ready додає JS — без JS усе просто видно. */
+
+@keyframes pj-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.projects__grid.is-ready .pj-card {
+  opacity: 0;
+}
+
+.projects__grid.is-ready .pj-card.is-in {
+  opacity: 1;
+  animation: pj-rise 0.9s var(--pj-ease) backwards;
+  animation-delay: var(--pj-delay, 0ms);
+}
+
+/* ---------- Менше руху, якщо так налаштовано в системі ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects__grid.is-ready .pj-card {
+    opacity: 1;
+  }
+
+  .projects__grid.is-ready .pj-card.is-in {
+    animation: none;
+  }
+
+  .pj-card,
+  .pj-media img,
+  .pj-btn,
+  .pj-btn svg {
+    transition: none;
+  }
+
+  .pj-card:hover,
+  .pj-card:hover .pj-media img,
+  .pj-btn:hover svg {
+    transform: none;
+  }
+}

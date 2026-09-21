@@ -1,0 +1,100 @@
+/* Використовує змінні з твого :root. Значення після коми — запасні,
+   на випадок якщо якась змінна в тебе називається інакше. */
+
+.footer {
+  padding: 32px 0;
+  background-color: var(--color-bg, #0a0a0a);
+  border-top: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  color: var(--color-text-muted, #9aa3ad);
+  font-family: var(--font-body, "Open Sans", sans-serif);
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Верхній рядок: лого + навігація */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+}
+
+.footer-link {
+  color: var(--color-text, #ffffff);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--color-accent-hover, #57b0ff);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--color-accent, #2f9bff);
+  outline-offset: 4px;
+}
+
+/* Нижній рядок: копірайт під тонкою лінією */
+.footer-copy {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    text-align: left;
+  }
+}
+
+/* Лого у футері: орбіта як у фавіконі + те саме слово, що в хедері */
+.footer-logo-mark {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  color: var(--color-text, #ffffff);
+  transition: color 250ms ease-out;
+}
+
+.footer-logo-dot {
+  fill: var(--color-accent, #2f9bff);
+  transition: fill 250ms ease-out;
+}
+
+.footer-logo:hover .footer-logo-mark,
+.footer-logo:focus-visible .footer-logo-mark {
+  color: var(--color-accent-hover, #57b0ff);
+}
+
+.footer-logo:hover .footer-logo-dot,
+.footer-logo:focus-visible .footer-logo-dot {
+  fill: var(--color-accent-hover, #57b0ff);
+}

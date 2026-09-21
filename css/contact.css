@@ -1,0 +1,445 @@
+/* =====================================================================
+   CONTACT SECTION
+   Підключи цей файл після styles.css (або встав його вміст в кінець).
+
+   Кольори й шрифти беруться з твого :root (--color-*, --font-heading),
+   тож палітру міняєш в одному місці.
+   ===================================================================== */
+
+.contact,
+.contact *,
+.contact *::before,
+.contact *::after {
+  box-sizing: border-box;
+}
+
+.contact {
+  --ct-accent: var(--color-accent, #2f9bff);
+  --ct-accent-hover: var(--color-accent-hover, #57b0ff);
+  --ct-text: var(--color-text-primary, #ffffff);
+  --ct-muted: var(--color-text-secondary, #b3b6bb);
+  --ct-faint: var(--color-text-muted, #7a7d82);
+  --ct-line: var(--color-border, #2a2c30);
+  --ct-line-strong: color-mix(in srgb, var(--ct-muted) 38%, transparent);
+  --ct-surface: var(--color-bg-secondary, #16181c);
+  --ct-inset: var(--color-bg-primary, #101215);
+  --ct-on-accent: var(--color-bg-header, #0c0d10);
+  --ct-error: #ff7a7a;
+  --ct-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  padding-block: clamp(72px, 11vw, 150px);
+  color: var(--ct-text);
+}
+
+.contact__inner {
+  width: min(1200px, 100% - 48px);
+  margin-inline: auto;
+}
+
+.contact__title {
+  margin: 0 0 clamp(32px, 5vw, 64px);
+  font-family: var(--font-heading, inherit);
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Left column: text + links ---------- */
+
+.contact__lead {
+  max-width: 38ch;
+  margin: 0;
+  color: var(--ct-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contact__availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.contact__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ct-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ct-accent) 22%, transparent);
+}
+
+.contact__links {
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ct-line);
+}
+
+.contact__links li {
+  border-bottom: 1px solid var(--ct-line);
+}
+
+.ct-link {
+  display: grid;
+  grid-template-columns: minmax(5rem, 6.5rem) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px;
+  color: var(--ct-text);
+  text-decoration: none;
+}
+
+.ct-link__label {
+  color: var(--ct-muted);
+  font-size: 0.88rem;
+}
+
+.ct-link__value {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
+}
+
+.ct-link svg {
+  width: 18px;
+  height: 18px;
+  color: var(--ct-muted);
+  transition:
+    transform 0.3s var(--ct-ease),
+    color 0.25s ease;
+}
+
+.ct-link:hover .ct-link__value {
+  color: var(--ct-accent-hover);
+}
+
+.ct-link:hover svg {
+  color: var(--ct-accent-hover);
+  transform: translate(3px, -3px);
+}
+
+.ct-link:focus-visible {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Form card ---------- */
+
+.ct-form {
+  position: relative;
+  padding: clamp(22px, 3.2vw, 40px);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--ct-line);
+  border-radius: 24px;
+  background: var(--ct-surface);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.45s ease;
+}
+
+.ct-form > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* м'яке світло за курсором, як на картках проєктів */
+.ct-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    color-mix(in srgb, var(--ct-accent) 12%, transparent),
+    transparent 62%
+  );
+  transition: opacity 0.4s ease;
+}
+
+@media (hover: hover) {
+  .ct-form:hover::before {
+    opacity: 1;
+  }
+}
+
+.ct-form:focus-within {
+  border-color: color-mix(in srgb, var(--ct-accent) 40%, transparent);
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+@media (max-width: 600px) {
+  .ct-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.ct-field {
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+}
+
+.ct-label,
+.ct-legend {
+  display: block;
+  margin: 0 0 8px;
+  padding: 0;
+  color: var(--ct-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ct-optional {
+  margin-left: 6px;
+  color: var(--ct-muted);
+  font-weight: 400;
+}
+
+.ct-field input[type="text"],
+.ct-field input[type="email"],
+.ct-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--ct-line);
+  border-radius: 12px;
+  background: var(--ct-inset);
+  color: var(--ct-text);
+  font: inherit;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ct-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+  color: var(--ct-faint);
+  opacity: 1;
+}
+
+.ct-field input[type="text"]:hover,
+.ct-field input[type="email"]:hover,
+.ct-field textarea:hover {
+  border-color: var(--ct-line-strong);
+}
+
+.ct-field input[type="text"]:focus,
+.ct-field input[type="email"]:focus,
+.ct-field textarea:focus {
+  outline: none;
+  border-color: var(--ct-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ct-accent) 25%, transparent);
+}
+
+.ct-field input[aria-invalid="true"],
+.ct-field textarea[aria-invalid="true"] {
+  border-color: var(--ct-error);
+}
+
+/* автозаповнення браузера не має ламати темну тему */
+.ct-field input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ct-text);
+  box-shadow: 0 0 0 1000px var(--ct-inset) inset;
+  caret-color: var(--ct-text);
+}
+
+.ct-error {
+  margin: 8px 0 0;
+  color: var(--ct-error);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+/* ---------- Project type chips ---------- */
+
+.ct-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ct-chip {
+  position: relative;
+  cursor: pointer;
+}
+
+.ct-chip input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ct-chip span {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid var(--ct-line);
+  border-radius: 999px;
+  background: var(--ct-inset);
+  color: var(--ct-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.ct-chip:hover span {
+  border-color: var(--ct-line-strong);
+  color: var(--ct-text);
+}
+
+.ct-chip input:checked + span {
+  border-color: var(--ct-accent);
+  background: color-mix(in srgb, var(--ct-accent) 24%, transparent);
+  color: var(--ct-text);
+}
+
+.ct-chip input:focus-visible + span {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Submit ---------- */
+
+.ct-submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+
+.ct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--ct-accent);
+  color: var(--ct-on-accent);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.ct-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s var(--ct-ease);
+}
+
+.ct-btn:hover {
+  background: var(--ct-accent-hover);
+}
+
+.ct-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.ct-btn:focus-visible {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 3px;
+}
+
+.ct-btn:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.ct-status {
+  flex: 1 1 220px;
+  margin: 0;
+  color: var(--ct-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.ct-status[data-state="success"] {
+  color: var(--ct-accent-hover);
+}
+
+.ct-status[data-state="error"] {
+  color: var(--ct-error);
+}
+
+.ct-status a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* приманка для спам-ботів: людина її не бачить */
+.ct-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Менше руху, якщо так налаштовано в системі ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-form,
+  .ct-form::before,
+  .ct-link__value,
+  .ct-link svg,
+  .ct-field input,
+  .ct-field textarea,
+  .ct-chip span,
+  .ct-btn,
+  .ct-btn svg {
+    transition: none;
+  }
+
+  .ct-link:hover svg,
+  .ct-btn:hover svg {
+    transform: none;
+  }
+}
