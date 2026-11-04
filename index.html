@@ -1,529 +1,704 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>  Tihan Studio </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tihan Studio</title>
 
-    <link rel="icon" href="./img/favicon.ico" sizes="32x32">
-<link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
-<meta name="theme-color" content="#0c0d10">
+    <link rel="icon" href="./img/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0c0d10" />
 
-
-<!--  Google Fonts з preconnect -->
+    <!--  Google Fonts з preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
- <!--  modern-normalize -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" />
+    <!--  modern-normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
 
-     <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-    
-    
-  <header class="header">
-    <div class="container">
-
-     <a class="logo" href="#home" aria-label="Tihan Studio, головна">
-    <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M25.39 16.49A9.4 9.4 0 1 1 15.51 6.61" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-        <circle class="logo-dot" cx="22.65" cy="9.35" r="3.2"/>
-    </svg>
-    <span class="logo-text">Tihan<span class="logo-text-light">Studio</span></span>
-</a>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a class="logo" href="#home" aria-label="Tihan Studio, головна">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path
+              d="M25.39 16.49A9.4 9.4 0 1 1 15.51 6.61"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.4"
+              stroke-linecap="round"
+            />
+            <circle class="logo-dot" cx="22.65" cy="9.35" r="3.2" />
+          </svg>
+          <span class="logo-text"
+            >Tihan<span class="logo-text-light">Studio</span></span
+          >
+        </a>
         <nav class="header-nav">
-            <ul class="header-nav-list">
-                <li class="header-nav-item"><a class="header-nav-link" href="#hero">Home</a></li>
-                <li class="header-nav-item"><a class="header-nav-link" href="#about">About</a></li>
-                <li class="header-nav-item"><a class="header-nav-link" href="#projects">Projects</a></li>
-                <li class="header-nav-item"><a class="header-nav-link" href="#contact">Contact</a></li>
-            </ul>
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#hero">Home</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#about">About</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </nav>
 
         <ul class="header-social-list">
-            <li class="header-social-item">
-                <a href="#" class="header-social-link">
-                    <svg class="header-social-icon" width="16" height="16">
-                        <use href="./img/icons.svg#twitter"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="header-social-item">
-                <a href="#" class="header-social-link">
-                    <svg class="header-social-icon" width="16" height="16">
-                        <use href="./img/icons.svg#linkedin"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="header-social-item">
-                <a href="#" class="header-social-link">
-                    <svg class="header-social-icon" width="16" height="16">
-                        <use href="./img/icons.svg#instagram"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="header-social-item">
-                <a href="#" class="header-social-link">
-                    <svg class="header-social-icon" width="16" height="16">
-                        <use href="./img/icons.svg#facebook"></use>
-                    </svg>
-                </a>
-            </li>
+          <li class="header-social-item">
+            <a href="#" class="header-social-link">
+              <svg class="header-social-icon" width="16" height="16">
+                <use href="./img/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item">
+            <a href="#" class="header-social-link">
+              <svg class="header-social-icon" width="16" height="16">
+                <use href="./img/icons.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item">
+            <a href="#" class="header-social-link">
+              <svg class="header-social-icon" width="16" height="16">
+                <use href="./img/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="header-social-item">
+            <a href="#" class="header-social-link">
+              <svg class="header-social-icon" width="16" height="16">
+                <use href="./img/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
+      </div>
+    </header>
 
-    </div>
-</header>
-
-       
     <main>
-<!------------------------- HERO SECTION --------------------------->
-<section class="hero" id="hero">
-    <div class="container hero-container">
+      <!------------------------- HERO SECTION --------------------------->
+      <section class="hero" id="hero">
+        <div class="container hero-container">
+          <div class="hero-main">
+            <p class="hero-subtitel">
+              <span class="hero-subtitel-line">&#8212;</span>Frontend
+              Developer<span class="hero-subtitel-line">&#8212;</span>
+            </p>
 
-        <div class="hero-main">
+            <h1 class="hero-titel">
+              Websites that <span class="hero-titel-span">work</span> as good as
+              they look.
+            </h1>
 
-            <p class="hero-subtitel"><span class="hero-subtitel-line">&#8212;</span>Frontend Developer<span class="hero-subtitel-line">&#8212;</span></p>
-          
-            <h1 class="hero-titel">Websites that <span class="hero-titel-span">work</span> as good as they look.</h1>
-            
-
-            <p class="hero-text">Good design catches the eye. Good code keeps it working — <br>long after the first impression fades.</p>
+            <p class="hero-text">
+              Good design catches the eye. Good code keeps it working —
+              <br />long after the first impression fades.
+            </p>
 
             <div class="btn">
-                <a href="cv.pdf" class="hero-btn">
-                    <svg class="hero-btn-icon" width="14" height="14">
-                        <use href="./img/icons.svg#resume"></use>
-                    </svg>
-                    Resume
-                </a>
+              <a href="cv.pdf" class="hero-btn">
+                <svg class="hero-btn-icon" width="14" height="14">
+                  <use href="./img/icons.svg#resume"></use>
+                </svg>
+                Resume
+              </a>
 
-                <a href="#projects" class="hero-btn-ghost">
-                    <svg class="hero-btn-icon" width="14" height="14">
-                        <use href="./img/icons.svg#portfolio"></use>
-                    </svg>
-                    Portfolio
-                </a>
+              <a href="#projects" class="hero-btn-ghost">
+                <svg class="hero-btn-icon" width="14" height="14">
+                  <use href="./img/icons.svg#portfolio"></use>
+                </svg>
+                Portfolio
+              </a>
             </div>
 
             <ul class="hero-tags">
-                <li class="hero-tag">HTML5</li>
-                <li class="hero-tag">CSS3</li>
-                <li class="hero-tag">JavaScript</li>
-                <li class="hero-tag">Git</li>
+              <li class="hero-tag">HTML5</li>
+              <li class="hero-tag">CSS3</li>
+              <li class="hero-tag">JavaScript</li>
+              <li class="hero-tag">Git</li>
             </ul>
+          </div>
+
+          <a
+            class="scroll-down"
+            href="#about"
+            aria-label="Scroll to the next section"
+          >
+            <span class="scroll-down-text">Scroll</span>
+            <span class="scroll-down-line" aria-hidden="true"></span>
+            <span class="scroll-down-head" aria-hidden="true"></span>
+          </a>
         </div>
+      </section>
 
-       <a class="scroll-down" href="#about" aria-label="Scroll to the next section">
-    <span class="scroll-down-text">Scroll</span>
-    <span class="scroll-down-line" aria-hidden="true"></span>
-    <span class="scroll-down-head" aria-hidden="true"></span>
-       </a>
+      <!-------------------- ABOUT ME ----------------------------------------->
 
-    </div>
-</section>
-
-<!-------------------- ABOUT ME ----------------------------------------->
-
-<section class="about" id="about">
-    <div class="container about-container">
-
-        <div class="about-text">
+      <section class="about" id="about">
+        <div class="container about-container">
+          <div class="about-text">
             <p class="section-titel">Who am I</p>
-            <h2 class="about-titel">About <span class="about-titel-span">Me</span></h2>
+            <h2 class="about-titel">
+              About <span class="about-titel-span">Me</span>
+            </h2>
 
             <p class="about-paragraph">
-                I'm Danylo Tykhonov — a frontend developer who builds modern, fast,
-                and responsive websites with HTML, CSS, and JavaScript. Whether it's
-                a business landing page or a portfolio site, I approach every project
-                with attention to detail and a focus on how the interface actually
-                feels to use.
+              I'm Danylo Tykhonov — a frontend developer who builds modern,
+              fast, and responsive websites with HTML, CSS, and JavaScript.
+              Whether it's a business landing page or a portfolio site, I
+              approach every project with attention to detail and a focus on how
+              the interface actually feels to use.
             </p>
 
             <p class="about-paragraph">
-                I have hands-on team leadership experience: I led the development of
-                a landing page as Project Manager — distributing tasks, building key
-                interface components, and coordinating the team from concept to a
-                finished, working website.
+              I have hands-on team leadership experience: I led the development
+              of a landing page as Project Manager — distributing tasks,
+              building key interface components, and coordinating the team from
+              concept to a finished, working website.
             </p>
 
             <p class="about-paragraph">
-                I'm constantly improving my skills through practice and real projects,
-                so I can offer clients clean code, solid markup, and results that
-                truly look and perform at a high level.
+              I'm constantly improving my skills through practice and real
+              projects, so I can offer clients clean code, solid markup, and
+              results that truly look and perform at a high level.
             </p>
 
             <ul class="about-cards">
-                <li class="about-card">
-                    <p class="about-card-label">Focus</p>
-                    <p class="about-card-value">UI Engineering</p>
-                </li>
-                <li class="about-card">
-                    <p class="about-card-label">Methodology</p>
-                    <p class="about-card-value">Modular Clean</p>
-                </li>
-                <li class="about-card">
-                    <p class="about-card-label">Status</p>
-                    <p class="about-card-value about-card-status">
-                        <span class="about-card-dot"></span>
-                        Available
-                    </p>
-                </li>
+              <li class="about-card">
+                <p class="about-card-label">ROLE</p>
+                <p class="about-card-value">Software Developer</p>
+              </li>
+              <li class="about-card">
+                <p class="about-card-label">APPROACH</p>
+                <p class="about-card-value">Mobile-first</p>
+              </li>
+              <li class="about-card">
+                <p class="about-card-label">STACK</p>
+                <p class="about-card-value">HTML &middot; CSS &middot; JS</p>
+              </li>
             </ul>
 
             <ul class="about-stats">
-                <li class="about-stat">
-                    <span class="about-stat-number">1</span>
-                    <span class="about-stat-label">Team Lead / PM Project</span>
-                </li>
-                <li class="about-stat">
-                    <span class="about-stat-number">3</span>
-                    <span class="about-stat-label">Core Technologies</span>
-                </li>
-                <li class="about-stat">
-                    <span class="about-stat-number">GoIT</span>
-                    <span class="about-stat-label">Frontend Course</span>
-                </li>
+              <li class="about-stat">
+                <span class="about-stat-number">2024</span>
+                <span class="about-stat-label">Started coding</span>
+              </li>
+              <li class="about-stat">
+                <span class="about-stat-number">10+</span>
+                <span class="about-stat-label">Projects built</span>
+              </li>
+              <li class="about-stat">
+                <span class="about-stat-number">Fullstack</span>
+                <span class="about-stat-label">Studying at GoIT</span>
+              </li>
             </ul>
-        </div>
+          </div>
 
-        <div class="about-photo">
+          <div class="about-photo">
             <img
-                src="./img/about-me@1x.png"
-                srcset="./img/about-me@1x.png 1x, ./img/about-me@2x.png 2x"
-                alt="Danylo Tykhonov"
-                class="about-photo-img"
-            >
+              src="./img/about-me@1x.png"
+              srcset="./img/about-me@1x.png 1x, ./img/about-me@2x.png 2x"
+              alt="Danylo Tykhonov"
+              class="about-photo-img"
+            />
+          </div>
         </div>
+      </section>
 
-    </div>
-</section>
-
-
-<section class="skills" id="skills">
-    <div class="container">
-
-        <div class="skills-header">
+      <section class="skills" id="skills">
+        <div class="container">
+          <div class="skills-header">
             <p class="section-titel">What I Know</p>
-            <h2 class="skills-titel">My <span class="skills-titel-span">Technical</span> Skills</h2>
-            <p class="skills-subtitle">The tools I use to turn an idea or a design into a fast, responsive website or web app.</p>
-        </div>
-
-        <!-- Навичка, яку ще вчиш, має плашку <span class="skill-badge">Learning</span>.
-             Коли вивчиш — просто видали цей span. -->
-        <div class="skills-groups">
-
+            <h2 class="skills-titel">
+              My <span class="skills-titel-span">Technical</span> Skills
+            </h2>
+            <p class="skills-subtitle">
+              The tools I use to turn an idea or a design into a fast,
+              responsive website or web app.
+            </p>
+          </div>
+          <div class="skills-groups">
             <div class="skills-group">
-                <h3 class="skills-group-title">Frontend</h3>
-                <ul class="skills-grid">
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#html5"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">HTML &amp; CSS</p>
-                            <p class="skill-desc">Responsive layouts</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#javascript"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">JavaScript</p>
-                            <p class="skill-desc">Interactive features</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#react"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">React Redux / Context / Hooks</p>
-                            <p class="skill-desc">Fast web apps</p>
-                        </div>
-                        <span class="skill-badge">Learning</span>
-                    </li>
-                </ul>
+              <h3 class="skills-group-title">Frontend</h3>
+              <ul class="skills-grid">
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#html5"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">HTML &amp; CSS</p>
+                    <p class="skill-desc">Responsive layouts</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#javascript"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">JavaScript</p>
+                    <p class="skill-desc">Interactive features</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#react"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">React Redux / Context / Hooks</p>
+                    <p class="skill-desc">Fast web apps</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#typescript"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">TypeScript</p>
+                    <p class="skill-desc">Typed JavaScript</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#framework"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Bootstrap / Tailwind</p>
+                    <p class="skill-desc">CSS framework</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#angular"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Angular</p>
+                    <p class="skill-desc">Web app framework</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+              </ul>
             </div>
 
             <div class="skills-group">
-                <h3 class="skills-group-title">Backend &amp; data</h3>
-                <ul class="skills-grid">
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#sql"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">SQL Database</p>
-                            <p class="skill-desc">Data storage</p>
-                        </div>
-                        <span class="skill-badge">Learning</span>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#api"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Communication with API</p>
-                            <p class="skill-desc">Connecting services</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#cms"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">CMS</p>
-                            <p class="skill-desc">Sites you can edit</p>
-                        </div>
-                        <span class="skill-badge">Learning</span>
-                    </li>
-                </ul>
+              <h3 class="skills-group-title">Backend &amp; data</h3>
+              <ul class="skills-grid">
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#sql"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">SQL Database</p>
+                    <p class="skill-desc">Data storage</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#api"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Communication with API</p>
+                    <p class="skill-desc">Connecting services</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#cms"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">CMS</p>
+                    <p class="skill-desc">Sites you can edit</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+              </ul>
             </div>
 
             <div class="skills-group">
-                <h3 class="skills-group-title">Engineering</h3>
-                <ul class="skills-grid">
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#algorithms"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Algorithms</p>
-                            <p class="skill-desc">Clean, fast logic</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#git"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Git</p>
-                            <p class="skill-desc">Safe version control</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#testing"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Application testing</p>
-                            <p class="skill-desc">Fewer bugs at launch</p>
-                        </div>
-                        <span class="skill-badge">Learning</span>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#deployment"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Application deployment</p>
-                            <p class="skill-desc">Your project, live</p>
-                        </div>
-                        <span class="skill-badge">Learning</span>
-                    </li>
-                </ul>
+              <h3 class="skills-group-title">Engineering</h3>
+              <ul class="skills-grid">
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#algorithms"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Algorithms</p>
+                    <p class="skill-desc">Clean, fast logic</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#git"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Git</p>
+                    <p class="skill-desc">Safe version control</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#testing"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Application testing</p>
+                    <p class="skill-desc">Fewer bugs at launch</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#deployment"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Application deployment</p>
+                    <p class="skill-desc">Your project, live</p>
+                  </div>
+                  <span class="skill-badge">Learning</span>
+                </li>
+              </ul>
             </div>
 
             <div class="skills-group">
-                <h3 class="skills-group-title">AI tools</h3>
-                <ul class="skills-grid">
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#claude"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Claude</p>
-                            <p class="skill-desc">Code help and review</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#chatgpt"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">ChatGPT</p>
-                            <p class="skill-desc">Research and ideas</p>
-                        </div>
-                    </li>
-                    <li class="skill-card">
-                        <div class="skill-icon-wrap">
-                            <svg class="skill-icon" width="22" height="22"><use href="./img/icons.svg#stitch"></use></svg>
-                        </div>
-                        <div class="skill-info">
-                            <p class="skill-name">Stitch</p>
-                            <p class="skill-desc">Quick UI drafts</p>
-                        </div>
-                    </li>
-                </ul>
+              <h3 class="skills-group-title">AI tools</h3>
+              <ul class="skills-grid">
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#claude"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Claude</p>
+                    <p class="skill-desc">Code help and review</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#chatgpt"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">ChatGPT</p>
+                    <p class="skill-desc">Research and ideas</p>
+                  </div>
+                </li>
+                <li class="skill-card">
+                  <div class="skill-icon-wrap">
+                    <svg class="skill-icon" width="22" height="22">
+                      <use href="./img/icons.svg#stitch"></use>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <p class="skill-name">Stitch</p>
+                    <p class="skill-desc">Quick UI drafts</p>
+                  </div>
+                </li>
+              </ul>
             </div>
 
             <div class="skills-group">
-                <h3 class="skills-group-title">Soft skills</h3>
-                <ul class="soft-skills-list">
-                    <li class="soft-skill-tag">Team Leadership</li>
-                    <li class="soft-skill-tag">Problem Solving</li>
-                    <li class="soft-skill-tag">Time Management</li>
-                    <li class="soft-skill-tag">Communication</li>
-                    <li class="soft-skill-tag">Creativity</li>
-                </ul>
+              <h3 class="skills-group-title">Soft skills</h3>
+              <ul class="soft-skills-list">
+                <li class="soft-skill-tag">Team Leadership</li>
+                <li class="soft-skill-tag">Problem Solving</li>
+                <li class="soft-skill-tag">Time Management</li>
+                <li class="soft-skill-tag">Communication</li>
+                <li class="soft-skill-tag">Creativity</li>
+              </ul>
             </div>
+          </div>
 
-        </div>
-
-        <div class="skills-cta">
-            <p class="skills-cta-text"><strong class="skills-cta-title">Have a project in mind?</strong> Tell me what you need, and I'll turn it into a fast, responsive website or web app.</p>
+          <div class="skills-cta">
+            <p class="skills-cta-text">
+              <strong class="skills-cta-title">Have a project in mind?</strong>
+              Tell me what you need, and I'll turn it into a fast, responsive
+              website or web app.
+            </p>
             <a class="skills-cta-link" href="#contact">Discuss your project</a>
+          </div>
         </div>
+      </section>
 
-    </div>
-</section>
+      <section class="projects" id="projects">
+        <div class="projects__container">
+          <div class="projects__header">
+            <p class="projects__label">Portfolio</p>
+            <h2 class="projects__heading">My Projects</h2>
+          </div>
 
-<section class="projects" id="projects" aria-labelledby="projects-title">
-    <div class="projects__inner">
-      <header class="projects__head">
-        <h2 class="projects__title" id="projects-title">Projects</h2>
-        <p class="projects__lead">
-          Things I've built while learning, from course assignments to team work.
-          Each one comes with a live page and the source code.
-        </p>
-      </header>
- 
-      <!-- Картки створює js/projects.js -->
-      <div class="projects__grid" id="projects-grid">
-        <noscript>Enable JavaScript to see the projects, or visit my GitHub: github.com/Danieltykhonov</noscript>
-      </div>
-    </div>
-  </section>
-   <section class="contact" id="contact" aria-labelledby="contact-title">
-    <div class="contact__inner">
-      <h2 class="contact__title" id="contact-title">Contact</h2>
- 
-      <div class="contact__grid">
- 
-        <!-- Ліва колонка -->
-        <div class="contact__info">
-          <p class="contact__lead">
-            Need a landing page, a business website or a redesign? Tell me about
-            your project and I'll get back to you by email.
-          </p>
-          <p class="contact__availability">
-            <span class="contact__dot" aria-hidden="true"></span>
-            Open to new projects
-          </p>
- 
-          <!-- Список контактів створює js/contact.js -->
-          <ul class="contact__links" id="contact-links"></ul>
-        </div>
- 
-        <!-- Форма -->
-        <form class="ct-form" id="contact-form" novalidate>
-          <div class="ct-row">
-            <div class="ct-field">
-              <label class="ct-label" for="ct-name">Your name</label>
-              <input id="ct-name" name="name" type="text" autocomplete="name"
-                     placeholder="Jane Smith" required aria-describedby="ct-name-error">
-              <p class="ct-error" id="ct-name-error" hidden></p>
-            </div>
- 
-            <div class="ct-field">
-              <label class="ct-label" for="ct-email">Your email</label>
-              <input id="ct-email" name="email" type="email" autocomplete="email" inputmode="email"
-                     placeholder="jane@company.com" required aria-describedby="ct-email-error">
-              <p class="ct-error" id="ct-email-error" hidden></p>
-            </div>
-          </div>
- 
-          <fieldset class="ct-field">
-            <legend class="ct-legend">What do you need? <span class="ct-optional">optional</span></legend>
-            <div class="ct-chips">
-              <label class="ct-chip">
-                <input type="radio" name="project_type" value="Landing page"><span>Landing page</span>
-              </label>
-              <label class="ct-chip">
-                <input type="radio" name="project_type" value="Business website"><span>Business website</span>
-              </label>
-              <label class="ct-chip">
-                <input type="radio" name="project_type" value="Online store"><span>Online store</span>
-              </label>
-              <label class="ct-chip">
-                <input type="radio" name="project_type" value="Redesign"><span>Redesign</span>
-              </label>
-              <label class="ct-chip">
-                <input type="radio" name="project_type" value="Something else"><span>Something else</span>
-              </label>
-            </div>
-          </fieldset>
- 
-          <div class="ct-field">
-            <label class="ct-label" for="ct-message">Tell me about the project</label>
-            <textarea id="ct-message" name="message" rows="6" required
-                      placeholder="What is the website for, who will use it, and when do you need it?"
-                      aria-describedby="ct-message-error"></textarea>
-            <p class="ct-error" id="ct-message-error" hidden></p>
-          </div>
- 
-          <!-- Приманка для ботів, не видаляй -->
-          <div class="ct-hp" aria-hidden="true">
-            <label>Leave this field empty
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-            </label>
-          </div>
- 
-          <div class="ct-submit">
-            <button class="ct-btn" type="submit">
-              <span class="ct-btn__label">Send message</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M22 2 11 13"/>
-                <path d="M22 2 15 22l-4-9-9-4 20-7z"/>
+          <div class="projects__viewport">
+            <ul class="projects__list"></ul>
+
+            <button
+              class="projects__btn projects__btn--prev"
+              type="button"
+              aria-label="Попередні проєкти"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M15 4 7 12l8 8" />
               </svg>
             </button>
-            <p class="ct-status" id="ct-status" role="status" aria-live="polite"></p>
+            <button
+              class="projects__btn projects__btn--next"
+              type="button"
+              aria-label="Наступні проєкти"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m9 4 8 8-8 8" />
+              </svg>
+            </button>
           </div>
-        </form>
- 
-      </div>
- 
-      <noscript>Please enable JavaScript to use the contact form.</noscript>
-    </div>
-  </section>
+        </div>
+      </section>
 
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__inner">
+          <h2 class="contact__title" id="contact-title">Contact</h2>
+
+          <div class="contact__grid">
+            <div class="contact__info">
+              <p class="contact__lead">
+                Need a landing page, a business website or a redesign? Tell me
+                about your project and I'll get back to you by email.
+              </p>
+              <p class="contact__availability">
+                <span class="contact__dot" aria-hidden="true"></span>
+                Open to new projects
+              </p>
+
+              <ul class="contact__links" id="contact-links"></ul>
+            </div>
+
+            <form class="ct-form" id="contact-form" novalidate>
+              <div class="ct-row">
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-name">Your name</label>
+                  <input
+                    id="ct-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Jane Smith"
+                    required
+                    aria-describedby="ct-name-error"
+                  />
+                  <p class="ct-error" id="ct-name-error" hidden></p>
+                </div>
+
+                <div class="ct-field">
+                  <label class="ct-label" for="ct-email">Your email</label>
+                  <input
+                    id="ct-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    placeholder="jane@company.com"
+                    required
+                    aria-describedby="ct-email-error"
+                  />
+                  <p class="ct-error" id="ct-email-error" hidden></p>
+                </div>
+              </div>
+
+              <fieldset class="ct-field">
+                <legend class="ct-legend">
+                  What do you need? <span class="ct-optional">optional</span>
+                </legend>
+                <div class="ct-chips">
+                  <label class="ct-chip">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Landing page"
+                    /><span>Landing page</span>
+                  </label>
+                  <label class="ct-chip">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Business website"
+                    /><span>Business website</span>
+                  </label>
+                  <label class="ct-chip">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Online store"
+                    /><span>Online store</span>
+                  </label>
+                  <label class="ct-chip">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Redesign"
+                    /><span>Redesign</span>
+                  </label>
+                  <label class="ct-chip">
+                    <input
+                      type="radio"
+                      name="project_type"
+                      value="Something else"
+                    /><span>Something else</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="ct-field">
+                <label class="ct-label" for="ct-message"
+                  >Tell me about the project</label
+                >
+                <textarea
+                  id="ct-message"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="What is the website for, who will use it, and when do you need it?"
+                  aria-describedby="ct-message-error"
+                ></textarea>
+                <p class="ct-error" id="ct-message-error" hidden></p>
+              </div>
+
+              <!-- Приманка для ботів -->
+              <div class="ct-hp" aria-hidden="true">
+                <label
+                  >Leave this field empty
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </label>
+              </div>
+
+              <div class="ct-submit">
+                <button class="ct-btn" type="submit">
+                  <span class="ct-btn__label">Send message</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M22 2 11 13" />
+                    <path d="M22 2 15 22l-4-9-9-4 20-7z" />
+                  </svg>
+                </button>
+                <p
+                  class="ct-status"
+                  id="ct-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </div>
+            </form>
+          </div>
+
+          <noscript>Please enable JavaScript to use the contact form.</noscript>
+        </div>
+      </section>
     </main>
 
-
-
     <footer class="footer">
-  <div class="footer-container">
- 
-    <div class="footer-top">
-      <a class="logo footer-logo" href="#home" aria-label="Tihan Studio, home">
-        <svg class="footer-logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M25.39 16.49A9.4 9.4 0 1 1 15.51 6.61" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-          <circle class="footer-logo-dot" cx="22.65" cy="9.35" r="3.2"/>
-        </svg>
-        <span class="logo-text">Tihan<span class="logo-text-light">Studio</span></span>
-      </a>
- 
-      <nav class="footer-nav" aria-label="Site sections">
-        <ul class="footer-list">
-          <li><a class="footer-link" href="#home">Home</a></li>
-          <li><a class="footer-link" href="#about">About</a></li>
-          <li><a class="footer-link" href="#projects">Projects</a></li>
-          <li><a class="footer-link" href="#skills">Skills</a></li>
-          <li><a class="footer-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
- 
-    <p class="footer-copy">&copy; 2026 Danylo Tykhonov. All rights reserved.</p>
- 
-  </div>
-</footer>
+      <div class="footer-container">
+        <div class="footer-top">
+          <a
+            class="logo footer-logo"
+            href="#home"
+            aria-label="Tihan Studio, home"
+          >
+            <svg
+              class="footer-logo-mark"
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+            >
+              <path
+                d="M25.39 16.49A9.4 9.4 0 1 1 15.51 6.61"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3.4"
+                stroke-linecap="round"
+              />
+              <circle class="footer-logo-dot" cx="22.65" cy="9.35" r="3.2" />
+            </svg>
+            <span class="logo-text"
+              >Tihan<span class="logo-text-light">Studio</span></span
+            >
+          </a>
+
+          <nav class="footer-nav" aria-label="Site sections">
+            <ul class="footer-list">
+              <li><a class="footer-link" href="#home">Home</a></li>
+              <li><a class="footer-link" href="#about">About</a></li>
+              <li><a class="footer-link" href="#projects">Projects</a></li>
+              <li><a class="footer-link" href="#skills">Skills</a></li>
+              <li><a class="footer-link" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="footer-copy">
+          &copy; 2026 Danylo Tykhonov. All rights reserved.
+        </p>
+      </div>
+    </footer>
 
     <script src="js/project.js"></script>
+    <script type="module" src="js/project-test.js"></script>
     <script src="js/contact.js"></script>
-</body>
+  </body>
 </html>

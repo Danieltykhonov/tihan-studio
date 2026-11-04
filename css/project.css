@@ -1,378 +1,371 @@
-/* =====================================================================
-   PROJECTS SECTION
-   Підключи цей файл після styles.css (або встав його вміст в кінець).
-
-   Кольори і шрифти беруться з твого :root (--color-*, --font-heading).
-   Усі значення в блоці ".projects { ... }" нижче — це лише псевдоніми
-   на твої змінні, тож змінюєш палітру в одному місці — :root.
-   ===================================================================== */
-
-.projects,
-.projects *,
-.projects *::before,
-.projects *::after {
-  box-sizing: border-box;
-}
+/* =========================================================
+   Projects — слайдер робіт у рамці MacBook
+   Використовує змінні з :root твого styles.css.
+   Значення після коми — запасні, якщо такої змінної немає.
+   ========================================================= */
 
 .projects {
-  --pj-accent: var(--color-accent, #2f9bff);
-  --pj-accent-hover: var(--color-accent-hover, #57b0ff);
-  --pj-text: var(--color-text-primary, #ffffff);
-  --pj-muted: var(--color-text-secondary, #b3b6bb);
-  --pj-faint: var(--color-text-muted, #7a7d82);
-  --pj-line: var(--color-border, #2a2c30);
-  --pj-line-strong: color-mix(in srgb, var(--pj-muted) 38%, transparent);
-  --pj-surface: var(--color-bg-secondary, #16181c);
-  --pj-inset: var(--color-bg-primary, #101215);
-  --pj-on-accent: var(--color-bg-header, #0c0d10);
-  --pj-gap: clamp(16px, 2.2vw, 28px);
-  --pj-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-
-  padding-block: clamp(72px, 11vw, 150px);
-  color: var(--pj-text);
-}
-
-.projects__inner {
-  width: min(1200px, 100% - 48px);
-  margin-inline: auto;
-}
-
-/* ---------- Section head ---------- */
-
-.projects__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px 48px;
-  margin-bottom: clamp(32px, 5vw, 64px);
-}
-
-.projects__title {
-  margin: 0;
-  font-family: var(--font-heading, inherit);
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
-
-  color: var(--color-text-primary);
-}
-
-.projects__lead {
-  max-width: 36ch;
-  margin: 0;
-  color: var(--pj-muted);
-  font-size: 1.02rem;
-  line-height: 1.6;
-}
-
-/* ---------- Masonry grid ----------
-   Колонки: до 3 штук, кожна не вужча за 300px.
-   Висота карток різна — залежить від пропорцій фото і довжини тексту. */
-
-.projects__grid {
-  columns: 3 300px;
-  column-gap: var(--pj-gap);
-}
-
-/* ---------- Card ---------- */
-
-.pj-card {
   position: relative;
-  display: block;
-  margin: 0 0 var(--pj-gap);
-  padding: 10px;
-  overflow: hidden;
-  isolation: isolate;
-  break-inside: avoid;
-  border: 1px solid var(--pj-line);
-  border-radius: 24px;
-  background: var(--pj-surface);
-  transition:
-    transform 0.45s var(--pj-ease),
-    border-color 0.3s ease,
-    box-shadow 0.45s ease;
+  padding: 120px 0;
+  color: var(--color-text, #f2f2f5);
+  background-color: var(--color-bg, #0c0d10);
 }
 
-/* м'яке світло, що йде за курсором */
-.pj-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(
-    380px circle at var(--mx, 50%) var(--my, 0%),
-    color-mix(in srgb, var(--pj-accent) 16%, transparent),
-    transparent 62%
-  );
-  transition: opacity 0.4s ease;
+.projects__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
-.pj-card:focus-within {
-  border-color: color-mix(in srgb, var(--pj-accent) 45%, transparent);
-}
-
-@media (hover: hover) {
-  .pj-card:hover {
-    transform: translateY(-6px);
-    border-color: color-mix(in srgb, var(--pj-accent) 45%, transparent);
-    box-shadow: 0 30px 60px -32px color-mix(in srgb, var(--pj-accent) 45%, transparent);
-  }
-
-  .pj-card:hover::before {
-    opacity: 1;
-  }
-
-  .pj-card:hover .pj-media img {
-    transform: scale(1.05);
-  }
-}
-
-/* ---------- Media (photo) ---------- */
-
-.pj-media {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 16px;
-  background: var(--pj-inset);
-}
-
-/* фіксовані пропорції кадру: значення приходить з JS як --ratio */
-.pj-media--ratio {
-  aspect-ratio: var(--ratio);
-}
-
-.pj-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.9s var(--pj-ease);
-}
-
-.pj-media--ratio img {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* заглушка, поки фото немає */
-.pj-media--empty {
-  display: grid;
-  place-items: center;
-  border: 1px dashed var(--pj-line-strong);
-  background:
-    radial-gradient(
-      120% 90% at 20% 0%,
-      color-mix(in srgb, var(--pj-accent) 18%, transparent),
-      transparent 60%
-    ),
-    var(--pj-inset);
-}
-
-.pj-placeholder {
-  display: grid;
-  justify-items: center;
-  gap: 8px;
-  padding: 24px;
-  color: var(--pj-muted);
+.projects__header {
+  margin-bottom: 56px;
   text-align: center;
 }
 
-.pj-placeholder svg {
-  width: 34px;
-  height: 34px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+.projects__label {
+  margin: 0 0 12px;
 
-.pj-placeholder span {
-  font-size: 0.92rem;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--pj-text);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent, #2f9bff);
 }
 
-.pj-placeholder small {
-  color: var(--pj-faint);
-  font-size: 0.78rem;
-  word-break: break-all;
-}
-
-/* ---------- Body ---------- */
-
-.pj-body {
-  position: relative;
-  z-index: 1;
-  padding: 20px 12px 12px;
-}
-
-.pj-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.pj-title {
+.projects__heading {
   margin: 0;
   font-family: var(--font-heading, inherit);
-  font-size: 1.3rem;
+  font-size: 40px;
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
-.pj-year {
-  flex: none;
-  color: var(--pj-muted);
-  font-size: 0.85rem;
-  font-variant-numeric: tabular-nums;
+.projects__viewport {
+  position: relative;
 }
 
-.pj-desc {
-  margin: 10px 0 0;
-  color: var(--pj-muted);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-.pj-tags {
+.projects__list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 16px 0 0;
-  padding: 0;
+  gap: 48px;
+  margin: 0;
+  padding: 24px 0;
   list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
-.pj-tags li {
-  padding: 4px 10px;
-  border: 1px solid var(--pj-line);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  line-height: 1.4;
+.projects__list::-webkit-scrollbar {
+  display: none;
 }
 
-/* ---------- Buttons ---------- */
-
-.pj-actions {
+.projects__item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.pj-btn {
-  display: inline-flex;
-  flex: 1 1 130px;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 16px;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1;
-  text-decoration: none;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
+  flex: 0 0 calc((100% - 96px) / 3);
+  scroll-snap-align: start;
 }
 
-.pj-btn svg {
+.projects__link {
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 12px;
+  outline-offset: 8px;
+}
+
+.projects__link:focus-visible {
+  outline: 2px solid var(--color-accent, #2f9bff);
+}
+
+.projects__title {
+  margin: 48px 0 0;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  transition: color 250ms ease;
+}
+
+.projects__link:hover .projects__title,
+.projects__link:focus-visible .projects__title {
+  color: var(--color-accent, #2f9bff);
+}
+
+.projects__tech {
+  margin: 8px 0 0;
+
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-text-muted, #8e8e9a);
+}
+
+.projects__repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-family: var(--font-body, "Open Sans", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text, #f2f2f5);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  transition:
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+.projects__repo:hover,
+.projects__repo:focus-visible {
+  color: var(--color-accent-hover, #57b0ff);
+  border-color: var(--color-accent, #2f9bff);
+}
+
+.projects__repo svg {
   width: 16px;
   height: 16px;
-  flex: none;
-  transition: transform 0.3s var(--pj-ease);
 }
 
-.pj-btn--primary {
-  background: var(--pj-accent);
-  color: var(--pj-on-accent);
+.macbook {
+  transition: transform 300ms ease;
 }
 
-.pj-btn--primary:hover {
-  background: var(--pj-accent-hover);
+.projects__link:hover .macbook,
+.projects__link:focus-visible .macbook {
+  transform: translateY(-8px);
 }
 
-.pj-btn--primary:hover svg {
-  transform: translate(2px, -2px);
+.macbook__lid {
+  width: 84%;
+  margin: 0 auto;
+  padding: 0.6%;
+  background: linear-gradient(180deg, #e3e4e6 0%, #b9babd 100%);
+  border-radius: 18px 18px 4px 4px;
+  box-shadow: 0 0 0 1px #9fa1a4;
 }
 
-.pj-btn--ghost {
-  border-color: var(--pj-line-strong);
-  color: var(--pj-text);
+.macbook__screen {
+  position: relative;
+  padding: 3.4% 2.2% 2.6%;
+  background-color: #0b0b0c;
+  border-radius: 14px 14px 2px 2px;
 }
 
-.pj-btn--ghost:hover {
-  border-color: var(--pj-accent-hover);
-  color: var(--pj-accent-hover);
+.macbook__screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  width: 13%;
+  height: 4.2%;
+  background-color: #0b0b0c;
+  border-radius: 0 0 8px 8px;
+  transform: translateX(-50%);
 }
 
-.pj-btn--ghost:hover svg {
-  transform: scale(1.12);
+.macbook__screen::after {
+  content: "";
+  position: absolute;
+  top: 1.3%;
+  left: 50%;
+  z-index: 3;
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, #2c3e66 30%, #151a24 70%);
+  border-radius: 50%;
+  transform: translateX(-50%);
 }
 
-.pj-btn:focus-visible {
-  outline: 2px solid var(--pj-accent);
-  outline-offset: 3px;
+.macbook__display {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
 }
 
-/* ---------- Появa карток при скролі ----------
-   Клас .is-ready додає JS — без JS усе просто видно. */
-
-@keyframes pj-rise {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+.macbook__display::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.04) 35%,
+    transparent 36%
+  );
+  pointer-events: none;
 }
 
-.projects__grid.is-ready .pj-card {
-  opacity: 0;
+.macbook__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  background-color: #1a1a20;
+  transition: transform 600ms ease;
 }
 
-.projects__grid.is-ready .pj-card.is-in {
+.projects__link:hover .macbook__image {
+  transform: scale(1.03);
+}
+
+.macbook__hinge {
+  width: 78%;
+  height: 5px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #5c5e62, #2a2b2d);
+  border-radius: 0 0 3px 3px;
+}
+
+.macbook__base {
+  position: relative;
+  height: 16px;
+  background: linear-gradient(
+    180deg,
+    #f4f5f6 0%,
+    #d9dadc 35%,
+    #b4b6b9 75%,
+    #8e9093 100%
+  );
+  border-radius: 3px 3px 50% 50% / 3px 3px 100% 100%;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+.macbook__base::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15%;
+  height: 6px;
+  background: linear-gradient(180deg, #a5a7aa, #cfd0d2);
+  border-radius: 0 0 10px 10px;
+  transform: translateX(-50%);
+}
+
+.macbook__base::after {
+  content: "";
+  position: absolute;
+  right: 4%;
+  bottom: -22px;
+  left: 4%;
+  height: 22px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(47, 155, 255, 0.35),
+    transparent 70%
+  );
+  filter: blur(4px);
+  opacity: 0.5;
+  transition: opacity 300ms ease;
+}
+
+.projects__link:hover .macbook__base::after {
   opacity: 1;
-  animation: pj-rise 0.9s var(--pj-ease) backwards;
-  animation-delay: var(--pj-delay, 0ms);
 }
 
-/* ---------- Менше руху, якщо так налаштовано в системі ---------- */
+.projects__btn {
+  position: absolute;
+  top: 38%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  color: var(--color-text, #f2f2f5);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    opacity 250ms ease;
+}
+
+.projects__btn:hover,
+.projects__btn:focus-visible {
+  color: #fff;
+  background-color: var(--color-accent, #2f9bff);
+  border-color: var(--color-accent, #2f9bff);
+}
+
+.projects__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  color: var(--color-text, #f2f2f5);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.projects__btn--prev {
+  left: -68px;
+}
+
+.projects__btn--next {
+  right: -68px;
+}
+
+.projects__btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 1199px) {
+  .projects__item {
+    flex-basis: calc((100% - 48px) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .projects {
+    padding: 72px 0;
+  }
+
+  .projects__container {
+    padding: 0 16px;
+  }
+
+  .projects__heading {
+    font-size: 30px;
+  }
+
+  .projects__list {
+    gap: 24px;
+  }
+
+  .projects__item {
+    flex-basis: 100%;
+  }
+
+  .projects__title {
+    margin-top: 32px;
+    font-size: 20px;
+  }
+
+  .projects__btn {
+    display: none;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .projects__grid.is-ready .pj-card {
-    opacity: 1;
+  .projects__list {
+    scroll-behavior: auto;
   }
 
-  .projects__grid.is-ready .pj-card.is-in {
-    animation: none;
-  }
-
-  .pj-card,
-  .pj-media img,
-  .pj-btn,
-  .pj-btn svg {
+  .macbook,
+  .macbook__image {
     transition: none;
-  }
-
-  .pj-card:hover,
-  .pj-card:hover .pj-media img,
-  .pj-btn:hover svg {
-    transform: none;
   }
 }

@@ -1,178 +1,173 @@
-/* Щоб якорні посилання не ховалися під фіксованим хедером:
-   висота хедера (60px) + відступ зверху (12px) + трохи повітря */
 html {
-    scroll-padding-top: 88px;
+  scroll-padding-top: 88px;
 }
 
-/* Фіксований хедер із закругленнями як в iOS */
 .header {
-    position: fixed;
-    top: 12px;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    width: calc(100% - 32px);
-    max-width: 1080px;
-    margin: 0 auto;
-    background-color: rgba(12, 13, 16, 0.75);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid var(--color-border);
-    border-radius: 22px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: 12px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: calc(100% - 32px);
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: rgba(12, 13, 16, 0.75);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
 .header > .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/* Логотип: знак-орбіта (inline SVG) + слово. Той самий компонент у хедері й футері */
 .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    color: var(--color-text-primary);
-    transition: color 250ms ease-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--color-text-primary);
+  transition: color 250ms ease-out;
 }
 
 .logo-mark {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    color: var(--color-text-primary);
-    transition: color 250ms ease-out;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  color: var(--color-text-primary);
+  transition: color 250ms ease-out;
 }
 
 .logo-dot {
-    fill: var(--color-accent);
-    transition: fill 250ms ease-out;
+  fill: var(--color-accent);
+  transition: fill 250ms ease-out;
 }
 
 .logo-text {
-    font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    line-height: 1;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .logo-text-light {
-    margin-left: 0.3em;
-    font-weight: 300;
+  margin-left: 0.3em;
+  font-weight: 300;
 }
 
 .logo:focus,
 .logo:hover {
-    color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
 }
 
 .logo:focus .logo-mark,
 .logo:hover .logo-mark {
-    color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
 }
 
 .logo:focus .logo-dot,
 .logo:hover .logo-dot {
-    fill: var(--color-accent-hover);
+  fill: var(--color-accent-hover);
 }
 
 .header-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .header-nav-link {
-    position: relative;
-    display: block;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
-    transition: color 300ms ease-out;
-    color: var(--color-text-primary);
+  position: relative;
+  display: block;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  transition: color 300ms ease-out;
+  color: var(--color-text-primary);
 }
 
 .header-nav-link:focus,
 .header-nav-link:hover {
-    color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
 }
 
 .header-nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 300ms ease-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-out;
 }
 
 .header-nav-link:hover::after,
 .header-nav-link:focus::after {
-    transition: transform 250ms ease-out;
-    transform: scaleX(1);
+  transition: transform 250ms ease-out;
+  transform: scaleX(1);
 }
 
 /* Socials — separated by thin vertical lines */
 .header-social-list {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-social-item {
-    padding: 0 14px;
-    border-right: 1px solid var(--color-border);
+  padding: 0 14px;
+  border-right: 1px solid var(--color-border);
 }
 
 .header-social-item:last-child {
-    border-right: none;
-    padding-right: 0;
+  border-right: none;
+  padding-right: 0;
 }
 
 .header-social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-secondary);
-    transition: color 250ms ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: color 250ms ease-out;
 }
 
 .header-social-link:hover,
 .header-social-link:focus {
-    color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
 }
 
 .header-social-icon {
-    fill: currentColor;
+  fill: currentColor;
 }
 
-/* Менші відступи й закруглення на телефонах */
 @media (max-width: 767px) {
-    html {
-        scroll-padding-top: 76px;
-    }
+  html {
+    scroll-padding-top: 76px;
+  }
 
-    .header {
-        top: 8px;
-        width: calc(100% - 16px);
-        border-radius: 18px;
-    }
+  .header {
+    top: 8px;
+    width: calc(100% - 16px);
+    border-radius: 18px;
+  }
 
-    .header > .container {
-        min-height: 56px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .header > .container {
+    min-height: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
