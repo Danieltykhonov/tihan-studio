@@ -2,32 +2,32 @@
 
 const projects = [
   {
-    title: "Image Gallery",
-    tech: "JavaScript · basicLightbox",
-    live: "https://danieltykhonov.github.io/goit-js-hw-08/",
-    repo: "https://github.com/Danieltykhonov/goit-js-hw-08",
-    image: "./images/projects-test/gallery.jpg",
+    title: "Handmade Jewellery",
+    tech: "HTML · SCSS · Team project",
+    live: "https://danieltykhonov.github.io/flex-squad-project/",
+    repo: "https://github.com/Danieltykhonov/flex-squad-project",
+    image: "./img/projects/jewellery1x.jpg",
+  },
+  {
+    title: "WebStudio",
+    tech: "HTML · CSS",
+    live: "https://danieltykhonov.github.io/web-studio/",
+    repo: "https://github.com/Danieltykhonov/web-studio",
+    image: "./img/projects/webstudio.jpg",
+  },
+  {
+    title: "StrongBuild",
+    tech: "HTML · CSS",
+    live: "https://danieltykhonov.github.io/strongbuild/",
+    repo: "https://github.com/Danieltykhonov/strongbuild",
+    image: "./img/projects/strongbuild.jpg",
   },
   {
     title: "Gallery & Feedback Form",
     tech: "Vite · SimpleLightbox · localStorage",
     live: "https://danieltykhonov.github.io/goit-js-hw-09/",
     repo: "https://github.com/Danieltykhonov/goit-js-hw-09",
-    image: "./images/projects-test/hw-09.jpg",
-  },
-  {
-    title: "Handmade Jewellery",
-    tech: "HTML · SCSS · Team project",
-    live: "#",
-    repo: "#",
-    image: "./images/projects-test/jewellery.jpg",
-  },
-  {
-    title: "WebStudio",
-    tech: "HTML · CSS",
-    live: "#",
-    repo: "#",
-    image: "./images/projects-test/webstudio.jpg",
+    image: "./img/projects/hw-09.jpg",
   },
 ];
 
