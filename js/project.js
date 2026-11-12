@@ -29,6 +29,13 @@ const projects = [
     repo: "https://github.com/Danieltykhonov/goit-js-hw-09",
     image: "./img/projects/hw-09.jpg",
   },
+  {
+    title: "Your project here",
+    tech: "React · TypeScript · JavaScript · HTML5 · CSS",
+    live: "#",
+    repo: "https://github.com/Danieltykhonov",
+    image: "./img/projects/your-project.png",
+  },
 ];
 
 const GITHUB_ICON = `
