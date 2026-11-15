@@ -17,6 +17,12 @@
   --color-border: #2a2c30; /* тонкі розділювачі/лінії */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -89,6 +95,8 @@ button {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden,
