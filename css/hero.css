@@ -6,7 +6,7 @@
   height: 900px;
   background-image:
     linear-gradient(rgb(74 164 247 / 21%), rgb(16 18 21)),
-    url("../img/hero-img@1x.jpg"), url("");
+    url("../img/hero-img@1x.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -22,6 +22,7 @@
 .hero-container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-main {
@@ -30,6 +31,8 @@
   align-items: center;
   text-align: center;
   max-width: 700px;
+  width: 100%;
+  min-width: 0;
 }
 
 .hero-badge {
@@ -60,6 +63,7 @@
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
   text-transform: uppercase;
+  overflow-wrap: break-word;
 }
 
 .hero-titel-span {
@@ -73,6 +77,7 @@
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
+
 .hero-subtitel-line {
   color: var(--color-accent);
 }
@@ -82,14 +87,7 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-secondary);
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 8px;
+  overflow-wrap: break-word;
 }
 
 .btn {
@@ -187,7 +185,6 @@
   margin-bottom: 12px;
 }
 
-/* Довга лінія */
 .scroll-down-line {
   position: relative;
   width: 2px;
@@ -197,7 +194,6 @@
   background-color: rgba(255, 255, 255, 0.18);
 }
 
-/* Синій промінь, що біжить по лінії */
 .scroll-down-line::after {
   content: "";
   position: absolute;
@@ -214,7 +210,6 @@
   animation: scroll-flow 2.2s ease-in infinite;
 }
 
-/* Вістря стрілки: V, що спалахує, коли промінь доходить донизу */
 .scroll-down-head {
   width: 10px;
   height: 10px;
@@ -266,6 +261,12 @@
 }
 
 @media (max-width: 767px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    padding-block: 100px 120px;
+  }
+
   .scroll-down {
     bottom: 16px;
   }
@@ -286,7 +287,37 @@
   }
 }
 
-/* Для тих, хто вимкнув анімації в системі: статична стрілка з синім акцентом */
+@media (max-width: 479px) {
+  .btn {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn,
+  .hero-btn-ghost {
+    width: 100%;
+    max-width: 216px;
+    min-width: 0;
+  }
+
+  .hero-titel {
+    font-size: 30px;
+  }
+
+  .hero-subtitel {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .hero-text br {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-down-line::after {
     animation: none;
