@@ -47,7 +47,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <a class="logo" href="#home" aria-label="Tihan Studio, головна">
+        <a class="logo" href="#hero" aria-label="Tihan Studio, головна">
           <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
             <path
               d="M25.39 16.49A9.4 9.4 0 1 1 15.51 6.61"
@@ -62,6 +62,7 @@
             >Tihan<span class="logo-text-light">Studio</span></span
           >
         </a>
+
         <nav class="header-nav">
           <ul class="header-nav-list">
             <li class="header-nav-item">
@@ -81,36 +82,104 @@
 
         <ul class="header-social-list">
           <li class="header-social-item">
-            <a href="#" class="header-social-link">
+            <a href="#" class="header-social-link" aria-label="Twitter">
               <svg class="header-social-icon" width="16" height="16">
                 <use href="./img/icons.svg#twitter"></use>
               </svg>
             </a>
           </li>
           <li class="header-social-item">
-            <a href="#" class="header-social-link">
+            <a
+              href="https://www.linkedin.com/in/danylo-tykhonov-b85a0b166/"
+              class="header-social-link"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg class="header-social-icon" width="16" height="16">
                 <use href="./img/icons.svg#linkedin"></use>
               </svg>
             </a>
           </li>
           <li class="header-social-item">
-            <a href="#" class="header-social-link">
+            <a href="#" class="header-social-link" aria-label="Instagram">
               <svg class="header-social-icon" width="16" height="16">
                 <use href="./img/icons.svg#instagram"></use>
               </svg>
             </a>
           </li>
           <li class="header-social-item">
-            <a href="#" class="header-social-link">
+            <a href="#" class="header-social-link" aria-label="Facebook">
               <svg class="header-social-icon" width="16" height="16">
                 <use href="./img/icons.svg#facebook"></use>
               </svg>
             </a>
           </li>
         </ul>
+
+        <!-- Burger button (visible only on mobile) -->
+        <button
+          class="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
       </div>
     </header>
+
+    <!-- Mobile menu (outside the header!) -->
+    <div class="mobile-menu" id="mobile-menu">
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-menu-list">
+          <li><a class="mobile-menu-link" href="#hero">Home</a></li>
+          <li><a class="mobile-menu-link" href="#about">About</a></li>
+          <li><a class="mobile-menu-link" href="#projects">Projects</a></li>
+          <li><a class="mobile-menu-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <ul class="mobile-social-list">
+        <li>
+          <a href="#" class="mobile-social-link" aria-label="Twitter">
+            <svg class="mobile-social-icon" width="18" height="18">
+              <use href="./img/icons.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/danylo-tykhonov-b85a0b166/"
+            class="mobile-social-link"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="mobile-social-icon" width="18" height="18">
+              <use href="./img/icons.svg#linkedin"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="mobile-social-link" aria-label="Instagram">
+            <svg class="mobile-social-icon" width="18" height="18">
+              <use href="./img/icons.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="mobile-social-link" aria-label="Facebook">
+            <svg class="mobile-social-icon" width="18" height="18">
+              <use href="./img/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <main>
       <!------------------------- HERO SECTION --------------------------->
@@ -133,7 +202,7 @@
             </p>
 
             <div class="btn">
-              <a href="cv.pdf" class="hero-btn">
+              <a href="./files/cv.pdf" class="hero-btn">
                 <svg class="hero-btn-icon" width="14" height="14">
                   <use href="./img/icons.svg#resume"></use>
                 </svg>
@@ -202,7 +271,7 @@
             <ul class="about-cards">
               <li class="about-card">
                 <p class="about-card-label">ROLE</p>
-                <p class="about-card-value">Software Developer</p>
+                <p class="about-card-value">Frontend development</p>
               </li>
               <li class="about-card">
                 <p class="about-card-label">APPROACH</p>
@@ -715,7 +784,7 @@
       </div>
     </footer>
 
+    <script type="module" src="js/burger-menu.js"></script>
     <script type="module" src="js/project.js?v=2"></script>
-    <!-- <script src="js/contact.js"></script> -->
   </body>
 </html>
