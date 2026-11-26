@@ -6,7 +6,7 @@ const projects = [
     tech: "Team Lead · JavaScript · REST API · Vite · Swiper",
     live: "https://danieltykhonov.github.io/project-gr-js-09/",
     repo: "https://github.com/Danieltykhonov/project-gr-js-09",
-    image: "./img/projects/desctop.webp",
+    image: "./img/projects/desktop.webp",
   },
   {
     title: "Handmade Jewellery",
