@@ -2,6 +2,13 @@
 
 const projects = [
   {
+    title: "Booksy",
+    tech: "Team Lead · JavaScript · REST API · Vite · Swiper",
+    live: "https://danieltykhonov.github.io/project-gr-js-09/",
+    repo: "https://github.com/Danieltykhonov/project-gr-js-09",
+    image: "./img/projects/desctop.webp",
+  },
+  {
     title: "Handmade Jewellery",
     tech: "HTML · SCSS · Team project",
     live: "https://danieltykhonov.github.io/flex-squad-project/",
