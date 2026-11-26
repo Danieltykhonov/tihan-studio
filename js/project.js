@@ -10,7 +10,7 @@ const projects = [
   },
   {
     title: "Handmade Jewellery",
-    tech: "HTML · SCSS · Team project",
+    tech: "Team Lead · JavaScript · HTML · CSS",
     live: "https://danieltykhonov.github.io/flex-squad-project/",
     repo: "https://github.com/Danieltykhonov/flex-squad-project",
     image: "./img/projects/jewellery1x.jpg",
